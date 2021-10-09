@@ -1,18 +1,14 @@
 use std::io::{self, BufRead, Read};
 
 #[cfg(any(
-    features = "futures-03",
+    feature = "futures-03",
     feature = "tokio-02",
     feature = "tokio-03",
     feature = "tokio"
 ))]
 use std::pin::Pin;
 
-#[cfg(any(
-    features = "futures-03",
-    feature = "tokio-02",
-    feature = "tokio-03"
-))]
+#[cfg(any(feature = "futures-03", feature = "tokio-02", feature = "tokio-03"))]
 use std::mem::MaybeUninit;
 
 #[cfg(feature = "futures-core-03")]
